@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LaunchActivity"
-            android:noHistory = "true">
+        <activity
+            android:name=".LaunchActivity"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +24,22 @@
             android:theme="@style/FullscreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN_MENU" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/title_activity_jobs">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN_GAME" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".JobsActivity" />
+        <activity android:name=".UtilityActivity" />
+        <activity android:name=".UtilityActivity"></activity>
     </application>
 
 </manifest>

@@ -20,7 +20,7 @@ public class LaunchActivity extends AppCompatActivity {
           public void run(){
 
               try {
-                  sleep(5000);
+                  sleep(100);
               } catch (InterruptedException e) {
                   e.printStackTrace();
               }
