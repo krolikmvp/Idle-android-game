@@ -55,8 +55,8 @@ public class JobsActivity extends Fragment implements ProgressGenerator.OnComple
             public void onClick(View v) {
                 btnSend.setEnabled(false);
                 progressGenerator.start(btnSend);
-                counter++;
-                tw.setText(Integer.toString(counter));
+                tw.setText(Integer.toString( GameLoop.geti()));
+                GameLoop.seti(GameLoop.geti()+1);
 
             }
         });

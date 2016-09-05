@@ -12,6 +12,8 @@ public class LaunchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
+        DBHelper db= new DBHelper(this);
+        GameLoop gl=new GameLoop(db);
         ImageView mImageView;
         mImageView = (ImageView) findViewById(R.id.logo);
         mImageView.setImageResource(R.drawable.testlogo);
