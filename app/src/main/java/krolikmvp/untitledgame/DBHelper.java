@@ -23,6 +23,7 @@ public class DBHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " (key text,value integer)");
+        insertData("money",1000,db);
     }
 
     @Override
@@ -30,9 +31,8 @@ public class DBHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
-    public boolean insertData(String key,int value){
+    public boolean insertData(String key,int value, SQLiteDatabase db){
 
-        SQLiteDatabase db = getWritableDatabase();
         ContentValues cv= new ContentValues();
         cv.put(KEY,key);
         cv.put(VALUE,value);
@@ -47,5 +47,18 @@ public class DBHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = getWritableDatabase();
         Cursor res = db.rawQuery("SELECT * FROM " + TABLE_NAME,null);
         return res;
+    }
+    public boolean updateData(String key,int value)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues cv= new ContentValues();
+        cv.put(VALUE,value);
+        long result = db.update(TABLE_NAME,cv,"key = ?",new String[] {key});
+        return true;
+    }
+    public void removeAll()
+    {
+        SQLiteDatabase db = getWritableDatabase(); // helper is object extends SQLiteOpenHelper
+        db.delete(TABLE_NAME, null, null);
     }
 }

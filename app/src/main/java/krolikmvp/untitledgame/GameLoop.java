@@ -16,21 +16,20 @@ public final class GameLoop extends Activity {
     public GameLoop(DBHelper db1)
     {
         db=db1;
-
+        getMoney();
     }
 
-    public void getData(){
+    public void getMoney(){
         Cursor res = db.getAllData();
         if(res.getCount()==0) {
-            totalMoney =2;
+            totalMoney =1000;
             return;
         }
         StringBuffer sb = new StringBuffer();
         while(res.moveToNext()) {
-            sb.append(res.getInt(0));
-
+            sb.append(res.getInt(1));
         }
-
+        totalMoney=Integer.parseInt(sb.toString());
     }
     public static int geti(){
 
@@ -39,9 +38,7 @@ public final class GameLoop extends Activity {
 
     public static void seti(int val){
         totalMoney=val;
-        db.insertData("money",val);
-
-
+        db.updateData("money",totalMoney);
     }
 
 }
