@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 /**
  * Created by Damian on 2016-09-05.
  */
-public final class GameLoop extends Activity {
+public final class GameLoop{
     private static int totalMoney;
     public static final String PREFS_NAME = "MyPrefsFile";
     public static  DBHelper db;

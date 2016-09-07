@@ -9,13 +9,15 @@ public class ProgressGenerator {
 
     public interface OnCompleteListener {
 
-        public void onComplete();
+        public void onCompleteRp();
+        public void onCompleteUrp();
     }
 
     private OnCompleteListener mListener;
     private int mProgress;
-
-    public ProgressGenerator(OnCompleteListener listener) {
+    public IsRepetable rpt;
+    public ProgressGenerator(OnCompleteListener listener, IsRepetable _rpt) {
+        rpt=_rpt;
         mListener = listener;
     }
 
@@ -24,13 +26,27 @@ public class ProgressGenerator {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mProgress += 5;
+                mProgress += 1;
                 button.setProgress(mProgress);
-                if (mProgress < 100) {
-                    handler.postDelayed(this, 100);
-                } else {
-                    mListener.onComplete();
-                    mProgress=0;
+                if (mProgress < 100)
+                {
+                    handler.postDelayed(this, 50);
+                }
+                else
+                {
+                    if(rpt==IsRepetable.REPETABLE)
+                    {
+                        mListener.onCompleteRp();
+                        mProgress=0;
+                    }
+                    else
+                    {
+                        mListener.onCompleteUrp();
+                        mProgress=0;
+                    }
+
+
+
                 }
             }
         }, 100);

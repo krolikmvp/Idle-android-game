@@ -76,10 +76,33 @@
                     android:id="@+id/firstJobCount"
                     android:layout_weight="2"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearThird"
+                android:layout_below="@+id/linearSecond">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="owned1"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/linearFourth"
+                android:layout_below="@+id/linearThird">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="owned2"
+                    android:layout_weight="2"/>
+            </LinearLayout>
                 <com.dd.processbutton.iml.SubmitProcessButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/linearSecond"
+                    android:layout_below="@+id/linearFourth"
                     android:layout_marginBottom="16dp"
                     android:text="FirstIncome"
                     android:textColor="@android:color/white"
@@ -91,31 +114,12 @@
                     custom:pb_colorPressed="@color/blue_pressed"
                     custom:pb_colorProgress="@color/purple_progress"
                     custom:pb_colorError="@color/red_error" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button3"
-                    android:layout_below="@+id/firstIncomeButton"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/button4"
-                    android:layout_below="@+id/button3"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Button"
                     android:id="@+id/button5"
-                    android:layout_below="@+id/button4"
+                    android:layout_below="@+id/firstIncomeButton"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true" />
 
