@@ -45,8 +45,6 @@ public class ProgressGenerator {
                         mProgress=0;
                     }
 
-
-
                 }
             }
         }, 100);

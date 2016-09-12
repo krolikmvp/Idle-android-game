@@ -12,25 +12,31 @@ import android.database.sqlite.SQLiteDatabase;
 public final class GameLoop{
     private static int totalMoney;
     public static final String PREFS_NAME = "MyPrefsFile";
-    public static  DBHelper db;
+    public static DBHelper db;
     public GameLoop(DBHelper db1)
     {
         db=db1;
         getMoney();
     }
+    public static DBHelper getDb(){
 
+        return db;
+    }
     public void getMoney(){
         Cursor res = db.getAllData();
         if(res.getCount()==0) {
             totalMoney =1000;
             return;
         }
-        StringBuffer sb = new StringBuffer();
-        while(res.moveToNext()) {
-            sb.append(res.getInt(1));
-        }
-        totalMoney=Integer.parseInt(sb.toString());
+        res.moveToPosition(0);
+        String str= res.getString(res.getColumnIndex("value"));
+        totalMoney=Integer.parseInt(str);
     }
+
+    public static int getTotalMoney(){
+        return totalMoney;
+    }
+
     public static int geti(){
 
         return totalMoney;
@@ -38,7 +44,7 @@ public final class GameLoop{
 
     public static void seti(int val){
         totalMoney=val;
-        db.updateData("money",totalMoney);
+        //db.updateData("money",totalMoney);
     }
 
 }

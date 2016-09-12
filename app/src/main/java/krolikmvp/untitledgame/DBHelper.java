@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHelper extends SQLiteOpenHelper{
 
-    public static final String DATABASE_NAME="test.db";
+    public static final String DATABASE_NAME="test1.db";
     public static final String TABLE_NAME="variables";
     public static final String KEY="key";
     public static final String VALUE="value";
@@ -23,7 +23,16 @@ public class DBHelper extends SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME + " (key text,value integer)");
-        insertData("money",1000,db);
+        insertData("money",1000,db);//1
+        insertData("income01",0,db);//3
+        insertData("income02",0,db);//5
+        insertData("income03",0,db);//7
+        insertData("income04",0,db);//9
+        insertData("income05",0,db);//11
+        insertData("income06",0,db);//13
+        insertData("income07",0,db);//15
+        insertData("income08",0,db);//17
+
     }
 
     @Override

@@ -54,10 +54,11 @@ public class JobsActivity extends Fragment {
 
         final View rootView = inflater.inflate(R.layout.activity_jobs, container, false);
         money_tw=(TextView)rootView.findViewById(R.id.money_tw);
-        firstIncomeButton = (SubmitProcessButton) rootView.findViewById(R.id.firstIncomeButton);
+        firstIncomeButton = (SubmitProcessButton) rootView.findViewById(R.id.IncomeButton01);
         jobButton = (SubmitProcessButton) rootView.findViewById(R.id.firstJobButton);
         Income work=new Income(rootView,jobButton,money_tw,unretepable);
         Income income=new Income(rootView,firstIncomeButton,money_tw,repetable);
+        income.checkIsBought(3);
 
         return rootView;
     }

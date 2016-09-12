@@ -19,7 +19,6 @@ public class UtilityActivity extends Fragment {
 
     public UtilityActivity() {
     }
-    TextView tw;
     /**
      * Returns a new instance of this fragment for the given section
      * number.
