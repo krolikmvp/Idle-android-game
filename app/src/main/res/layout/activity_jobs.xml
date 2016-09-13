@@ -24,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/linearFirst">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -102,7 +103,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+"
-                    android:id="@+id/button3"
+                    android:id="@+id/IncomeButton01Plus"
                     android:layout_weight="1"/>
 
                 <Button
@@ -110,14 +111,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
-                    android:id="@+id/button2"
+                    android:id="@+id/IncomeButton01Minus"
                     android:layout_weight="1"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="START"
-                    android:id="@+id/button"
+                    android:id="@+id/IncomeButton01Start"
                     android:layout_weight="1"/>
 
             </LinearLayout>
@@ -146,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+"
-                    android:id="@+id/button4"
+                    android:id="@+id/IncomeButton02Plus"
                     android:layout_weight="1"/>
 
                 <Button
@@ -154,14 +155,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
-                    android:id="@+id/button13"
+                    android:id="@+id/IncomeButton02Minus"
                     android:layout_weight="1"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="START"
-                    android:id="@+id/button14"
+                    android:id="@+id/IncomeButton02Start"
                     android:layout_weight="1"/>
             </LinearLayout>
             <LinearLayout
@@ -189,7 +190,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+"
-                    android:id="@+id/button44"
+                    android:id="@+id/IncomeButton03Plus"
                     android:layout_weight="1"/>
 
                 <Button
@@ -197,14 +198,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
-                    android:id="@+id/button133"
+                    android:id="@+id/IncomeButton03Minus"
                     android:layout_weight="1"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="START"
-                    android:id="@+id/button144"
+                    android:id="@+id/IncomeButton03Start"
                     android:layout_weight="1"/>
             </LinearLayout>
         </RelativeLayout>

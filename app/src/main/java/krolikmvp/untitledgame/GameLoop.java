@@ -11,38 +11,62 @@ import android.database.sqlite.SQLiteDatabase;
  */
 public final class GameLoop{
     private static int totalMoney;
+    private static int actualPopulation;
+    private static int MONEY_POS=0;
+    private static int POPULATION_POS=1;
     public static final String PREFS_NAME = "MyPrefsFile";
     public static DBHelper db;
     public GameLoop(DBHelper db1)
     {
         db=db1;
-        getMoney();
+        getVariables();
     }
-    public static DBHelper getDb(){
-
+    public static DBHelper getDb()
+    {
         return db;
     }
-    public void getMoney(){
+
+
+    public void getVariables()
+    {
         Cursor res = db.getAllData();
         if(res.getCount()==0) {
-            totalMoney =1000;
+            totalMoney = 2000;
+            actualPopulation = 60;
             return;
         }
-        res.moveToPosition(0);
+        res.moveToPosition(MONEY_POS);
         String str= res.getString(res.getColumnIndex("value"));
         totalMoney=Integer.parseInt(str);
+        res.moveToPosition(POPULATION_POS);
+        str= res.getString(res.getColumnIndex("value"));
+        actualPopulation=Integer.parseInt(str);
     }
 
-    public static int getTotalMoney(){
+    public static int getTotalMoney()
+    {
         return totalMoney;
     }
 
-    public static int geti(){
-
-        return totalMoney;
+    public static String getTotalMoneyString()
+    {
+        return Integer.toString(totalMoney);
     }
 
-    public static void seti(int val){
+    public static String getActualPopulationString() {
+        return Integer.toString(actualPopulation);
+    }
+
+    public static int getActualPopulation() {
+        return actualPopulation;
+    }
+
+    public static void setActualPopulation(int val) {
+        actualPopulation=val;
+    }
+
+    public static void seti(int val)
+    {
         totalMoney=val;
         //db.updateData("money",totalMoney);
     }
